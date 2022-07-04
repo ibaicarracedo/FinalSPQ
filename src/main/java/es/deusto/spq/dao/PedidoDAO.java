@@ -1,4 +1,4 @@
 package es.deusto.spq.dao;
 
-public class PedidosDAO {
+public class PedidoDAO {
 }
