@@ -1,5 +1,6 @@
 package es.deusto.spq.jdo;
 
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -14,11 +15,20 @@ public class Usuario {
     private String email;
     private String dir;
 
-    @Persistent(mappedBy = "usuario", dependentElement = "true")
+    @Persistent(mappedBy = "user", dependentElement = "true")
     private ArrayList<Pedido> pedidos;
 
     public Usuario() {
         super();
+    }
+
+    public Usuario(String us, String pass) {
+        super();
+        this.user = us;
+        this.pass = pass;
+        this.email = null;
+        this.dir = null;
+        this.pedidos = null;
     }
 
     public Usuario(String us, String pass, String email, String dir) {

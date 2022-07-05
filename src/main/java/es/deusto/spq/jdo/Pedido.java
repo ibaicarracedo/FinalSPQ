@@ -1,6 +1,7 @@
 package es.deusto.spq.jdo;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import java.util.ArrayList;
 
 @PersistenceCapable

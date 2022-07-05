@@ -1,10 +1,12 @@
 package es.deusto.spq.jdo;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import java.util.Calendar;
 
 @PersistenceCapable
 public class Pizza {
+
 
     private boolean mozzarella;
     private boolean tomate;
@@ -34,6 +36,7 @@ public class Pizza {
         this.pimiento = pimiento;
         this.pollo = pollo;
     }
+
 
     public boolean isMozzarella() {
         return mozzarella;

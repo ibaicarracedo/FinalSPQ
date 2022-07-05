@@ -7,28 +7,29 @@ import javax.jdo.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PedidoDAO implements IDataAccessObject<Pedido>{
+public class PizzaDAO implements IDataAccessObject<Pizza>
+{
 
     private PersistenceManager pm = null;
     private PersistenceManagerFactory pmf=null;
-    private static PedidoDAO instance;
+    private static PizzaDAO instance;
 
-    private PedidoDAO() {
+    private PizzaDAO() {
 
         pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
         pm = pmf.getPersistenceManager();
     }
 
 
-    public static PedidoDAO getInstance() {
+    public static PizzaDAO getInstance() {
         if (instance == null) {
-            instance = new PedidoDAO();
+            instance = new PizzaDAO();
         }
         return instance;
     }
 
     @Override
-    public void delete(Pedido object) {
+    public void delete(Pizza object) {
         Transaction tx = pm.currentTransaction();
         tx.begin();
         pm.deletePersistent(object);
@@ -37,29 +38,30 @@ public class PedidoDAO implements IDataAccessObject<Pedido>{
     }
 
     @Override
-    public Pedido find(String param) {
+    public Pizza find(String param) {
         return null;
     }
 
     @Override
-    public List<Pedido> getAll() {
+    public List<Pizza> getAll() {
         Transaction tx = pm.currentTransaction();
-        List<Pedido> lista = null;
+        List<Pizza> lista = null;
         try {
             tx.begin();
-            Query query = pm.newQuery("SELECT FROM " + Pedido.class.getName());
+            Query query = pm.newQuery("SELECT FROM " + Pizza.class.getName());
             System.out.println(query);
-            lista = (List<Pedido>)query.execute();
+            lista = (List<Pizza>)query.execute();
             System.out.println(query.execute());
             tx.commit();
         } catch(Exception ex) {
-            System.out.println("EXCEPCION AL OBTENER PEDIDOS : \n"+ ex.getMessage());
+            System.out.println("EXCEPCION AL OBTENER PIZZAS : \n"+ ex.getMessage());
         }
         return lista;
+
     }
 
     @Override
-    public void save(Pedido object) {
+    public void save(Pizza object) {
         Transaction tx = pm.currentTransaction();
         tx.begin();
         pm.makePersistent(object);

@@ -1,6 +1,7 @@
 package es.deusto.spq.client;
 
 import es.deusto.spq.client.Ventanas.VentanaLogin;
+import es.deusto.spq.client.funcionalidad.Remote;
 
 import java.awt.*;
 
@@ -9,8 +10,7 @@ public class Main {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    VentanaLogin frame = new VentanaLogin();
-                    frame.setVisible(true);
+                    new Remote("127.0.0.1", "3306");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
