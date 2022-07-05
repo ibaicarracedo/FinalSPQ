@@ -7,11 +7,11 @@ import java.util.ArrayList;
 public class Pedido {
 
     private Usuario user;
-    private ArrayList<Pizza> pizzas;
+    private Pizza pizza;
 
-    public Pedido(Usuario user, ArrayList<Pizza> pizzas) {
+    public Pedido(Usuario user, Pizza pizzas) {
         this.user = user;
-        this.pizzas = pizzas;
+        this.pizza = pizzas;
     }
 
     public Usuario getUser() {
@@ -22,11 +22,11 @@ public class Pedido {
         this.user = user;
     }
 
-    public ArrayList<Pizza> getPizzas() {
-        return pizzas;
+    public Pizza getPizzas() {
+        return pizza;
     }
 
-    public void setPizzas(ArrayList<Pizza> pizzas) {
-        this.pizzas = pizzas;
+    public void setPizzas(Pizza pizzas) {
+        this.pizza = pizzas;
     }
 }
