@@ -1,5 +1,6 @@
 # FinalSPQ
-[![Java CI]()]()   [![codecov]()]()
+
+[![Java CI](https://github.com/ibaicarracedo/FinalSPQ/actions/workflows/ci.yml/badge.svg)](https://github.com/ibaicarracedo/FinalSPQ/actions/workflows/ci.yml)
 
 
 ## Compilar el proyecto
